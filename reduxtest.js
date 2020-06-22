@@ -14,10 +14,10 @@ const myReducer = ( state = initialState, action ) => {
      const newState= {...state}
 
      if( action.type === 'ADD') {
-       newState.age += 1
+       newState.age += action.val
      }
      if( action.type === 'SUBTRACT' ) {
-       newState.age -= 1
+       newState.age -= action.val
      }
 
      return newState
@@ -34,6 +34,6 @@ store.subscribe(() => {
 
 //FOUR  Write actions
 
-store.dispatch({ type:'ADD' })
-store.dispatch({ type:'SUBTRACT' })
+store.dispatch({ type:'ADD', val:10 })
+store.dispatch({ type:'SUBTRACT', val:5 })
 
